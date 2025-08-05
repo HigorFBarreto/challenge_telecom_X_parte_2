@@ -81,28 +81,4 @@ Incentivar migração para contratos de maior duração com benefícios.
 
 Comunicar-se de forma personalizada com clientes em risco usando os insights do modelo.
 
-Como Executar
-Clone o repositório:
 
-bash
-Copiar
-Editar
-git clone https://github.com/MateusSanfer/Telecom-X-Parte-2-Prevendo-Churn.git
-cd Telecom-X-Parte-2-Prevendo-Churn
-Instale as dependências:
-
-bash
-Copiar
-Editar
-pip install -r requirements.txt
-Carregue os dados tratados via código Python:
-
-python
-Copiar
-Editar
-import pandas as pd
-
-url_dados_tratados = 'https://raw.githubusercontent.com/MateusSanfer/Challenge-Telecom-X-One/refs/heads/main/dados_tratados.csv'
-
-dados_tratados = pd.read_csv(url_dados_tratados)
-print(dados_tratados.head())
