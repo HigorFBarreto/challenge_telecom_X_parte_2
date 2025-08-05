@@ -1,59 +1,82 @@
-📊 Análise de Evasão de Clientes (Churn) - TelecomX II
-Este projeto tem como objetivo principal analisar os dados de clientes de uma empresa de telecomunicações para identificar os fatores que mais influenciam a evasão (churn). O trabalho foi desenvolvido para construir e avaliar modelos de Machine Learning capazes de prever quais clientes têm maior probabilidade de cancelar seus serviços, permitindo a implementação de estratégias de retenção proativas e direcionadas.
+### Telecom X – Parte 2: Previsão de Churn de Clientes
+Descrição do Projeto
+Neste projeto, atuamos como Analista de Machine Learning Júnior na Telecom X, com o objetivo de construir modelos preditivos para identificar clientes com maior risco de cancelar os serviços (churn). Isso permitirá à empresa implementar estratégias de retenção mais eficazes.
 
-📈 Requisitos
-Python 3.x
-Pandas, NumPy, Seaborn, Matplotlib, Scikit-learn
-📌 O projeto foi desenvolvido e executado no ambiente Google Colab.
+Objetivos
+Realizar pré-processamento dos dados (limpeza, encoding, normalização).
 
-🌐 Fonte de Dados
-Os dados utilizados são carregados diretamente de um arquivo JSON hospedado no GitHub:
+Analisar correlações entre variáveis.
 
-https://raw.githubusercontent.com/Raybarreto/Challenge3_TelecomX_II/refs/heads/main/dados_tratados.csv
-📁 Estrutura do Projeto
-Telecom_BR_II.ipynb – Notebook principal contendo:
-Pré-processamento dos dados
-Análise exploratória e correlação
-Modelagem preditiva (Regressão Logística, Random Forest, SVM)
-Avaliação dos modelos
-Interpretação dos resultados
-🔍 Objetivos
-Detectar os principais fatores que levam à saída dos clientes.
-Construir modelos preditivos eficazes para prever a evasão.
-Propor estratégias de retenção baseadas nos insights obtidos.
-⚙️ Técnicas Utilizadas
-📌 Pré-processamento
-Remoção de colunas irrelevantes (Id_cliente)
-One-hot encoding para variáveis categóricas
-Normalização para modelos sensíveis à escala
-Tratamento de valores nulos
-📌 Análise Exploratória
-Proporção de churn
-Correlação entre variáveis
-Boxplots para tempo de serviço e cobrança total vs. churn
-📌 Modelagem
-Regressão Logística (melhor recall para evasão)
-Random Forest
-SVM (linear)
-📌 Avaliação de Modelos
-Acurácia, Precisão, Recall, F1-score
-Matriz de Confusão
-Curva ROC e Precisão-Recall
-✅ Principais Resultados
-🔝 Variáveis com maior influência na evasão:
-Tempo de serviço (negativo)
-Cobrança total
-Tipo de contrato
-Tipo de internet (Fibra ótica)
-Forma de pagamento (cheque eletrônico)
-🧠 Melhor modelo:
-Regressão Logística apresentou:
-Acurácia: 80,6%
-Recall (Evadiu): 53,6% (melhor entre os modelos)
-Alta interpretabilidade
-🎯 Estratégias Recomendadas de Retenção
-Incentivar contratos mais longos
-Promover pagamento automático por cartão
-Acompanhar de perto novos clientes (0–6 meses)
-Analisar e melhorar a experiência com internet por fibra
-Oferecer upgrade ou personalização para clientes com baixa cobrança total
+Balancear classes usando SMOTE para tratar o desbalanceamento.
+
+Treinar e comparar três modelos de classificação.
+
+Avaliar desempenho dos modelos e gerar insights estratégicos.
+
+Etapas do Projeto
+1. Preparação dos Dados
+Remoção de colunas irrelevantes e multicolineares (ID único e contas_diarias).
+
+Aplicação de OneHotEncoder para variáveis categóricas via ColumnTransformer.
+
+Normalização com StandardScaler para dados sensíveis à escala.
+
+Balanceamento das classes com SMOTE, equilibrando a proporção de churn (~26%).
+
+2. Análise de Correlação
+Correlação negativa moderada entre tenure e churn (-0.35), indicando menor churn com maior tempo de contrato.
+
+Correlações positivas moderadas com monthly_charges (0.19), paperless_billing (0.19) e senior_citizen (0.15).
+
+Remoção de contas_diarias por multicolinearidade perfeita com monthly_charges.
+
+3. Análises Visuais
+Boxplots mostraram que clientes que cancelaram possuem menor tempo de contrato e menor gasto total.
+
+Scatterplot reforçou que clientes de longo prazo e alto gasto total têm menor propensão a churn.
+
+4. Separação dos Dados
+Divisão estratificada em treino (70%) e teste (30%) mantendo a proporção de churn.
+
+5. Modelos Treinados
+Regressão Logística (linear, requer normalização).
+
+Random Forest (baseado em árvore, não requer normalização).
+
+KNN (baseado em distância, requer normalização).
+
+6. Avaliação dos Modelos
+Métrica	Regressão Logística	Random Forest (Otimizado)	KNN
+Acurácia	75%	78%	69%
+Precisão (Churn)	52%	59%	45%
+Recall (Churn)	80%	55%	72%
+F1-score (Churn)	0.63	0.57	0.55
+AUC	0.8443	0.8385	0.7545
+
+Regressão Logística apresentou melhor desempenho geral, com maior AUC e recall, ideal para identificar clientes em risco.
+
+Random Forest teve maior precisão, mas menor recall para churn.
+
+KNN apresentou desempenho inferior aos demais.
+
+7. Principais Fatores de Churn Identificados
+Tempo de contrato (clientes com menor tenure mais propensos a churn).
+
+Tipo de contrato (contratos mensais associam-se a maior churn).
+
+Serviço de internet (fibra óptica está ligado a maior evasão).
+
+Método de pagamento (cheque eletrônico aumenta risco).
+
+Valores de cobranças mensais e totais influenciam na rotatividade.
+
+8. Estratégias de Retenção Recomendadas
+Focar em clientes nos primeiros meses e com contratos mensais, oferecendo suporte e incentivos.
+
+Investigar satisfação e custo do serviço de fibra óptica.
+
+Analisar clientes que pagam com cheque eletrônico para identificar possíveis melhorias.
+
+Incentivar migração para contratos de maior duração com benefícios.
+
+Comunicar-se de forma personalizada com clientes em risco usando os insights do modelo.
