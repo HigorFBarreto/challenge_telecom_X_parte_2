@@ -1,5 +1,5 @@
 ### Telecom X – Parte 2: Previsão de Churn de Clientes
-Descrição do Projeto
+### Descrição do Projeto
 Neste projeto, atuamos como Analista de Machine Learning Júnior na Telecom X, com o objetivo de construir modelos preditivos para identificar clientes com maior risco de cancelar os serviços (churn). Isso permitirá à empresa implementar estratégias de retenção mais eficazes.
 
 Objetivos
