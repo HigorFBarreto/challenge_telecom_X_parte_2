@@ -23,29 +23,29 @@ Normalização com StandardScaler para dados sensíveis à escala.
 
 Balanceamento das classes com SMOTE, equilibrando a proporção de churn (~26%).
 
-2. Análise de Correlação
+## 📊  2. Análise de Correlação
 Correlação negativa moderada entre tenure e churn (-0.35), indicando menor churn com maior tempo de contrato.
 
 Correlações positivas moderadas com monthly_charges (0.19), paperless_billing (0.19) e senior_citizen (0.15).
 
 Remoção de contas_diarias por multicolinearidade perfeita com monthly_charges.
 
-3. Análises Visuais
+## 📈 3. Análises Visuais
 Boxplots mostraram que clientes que cancelaram possuem menor tempo de contrato e menor gasto total.
 
 Scatterplot reforçou que clientes de longo prazo e alto gasto total têm menor propensão a churn.
 
-4. Separação dos Dados
+## ✂️ 4. Separação dos Dados
 Divisão estratificada em treino (70%) e teste (30%) mantendo a proporção de churn.
 
-5. Modelos Treinados
+## 🤖 5. Modelos Treinados
 Regressão Logística (linear, requer normalização).
 
 Random Forest (baseado em árvore, não requer normalização).
 
 KNN (baseado em distância, requer normalização).
 
-6. Avaliação dos Modelos
+## 📊  6. Avaliação dos Modelos
 Métrica	Regressão Logística	Random Forest (Otimizado)	KNN
 Acurácia	75%	78%	69%
 Precisão (Churn)	52%	59%	45%
@@ -59,7 +59,7 @@ Random Forest teve maior precisão, mas menor recall para churn.
 
 KNN apresentou desempenho inferior aos demais.
 
-7. Principais Fatores de Churn Identificados
+## 📌 7. Principais Fatores de Churn Identificados
 Tempo de contrato (clientes com menor tenure mais propensos a churn).
 
 Tipo de contrato (contratos mensais associam-se a maior churn).
@@ -70,7 +70,7 @@ Método de pagamento (cheque eletrônico aumenta risco).
 
 Valores de cobranças mensais e totais influenciam na rotatividade.
 
-8. Estratégias de Retenção Recomendadas
+## 🚀 8. Estratégias de Retenção Recomendadas
 Focar em clientes nos primeiros meses e com contratos mensais, oferecendo suporte e incentivos.
 
 Investigar satisfação e custo do serviço de fibra óptica.
