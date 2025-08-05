@@ -80,3 +80,15 @@ Analisar clientes que pagam com cheque eletrônico para identificar possíveis m
 Incentivar migração para contratos de maior duração com benefícios.
 
 Comunicar-se de forma personalizada com clientes em risco usando os insights do modelo.
+
+## 📦 6. Instruções para Execução
+Para executar este projeto, siga os passos abaixo:
+
+Bibliotecas Necessárias: Certifique-se de ter as seguintes bibliotecas Python instaladas:
+
+pip install pandas numpy matplotlib seaborn scikit-learn
+Executando o Notebook:
+
+Clone este repositório do GitHub.
+Abra o arquivo challenge_telecom_x_churn_part2.ipynb em um ambiente como Jupyter Notebook ou Google Colab.
+O notebook está configurado para carregar o arquivo dados_tratados.csv diretamente da URL "Raw" do GitHub, então não é necessário fazer o upload manual dos dados. Apenas execute as células em sequência.
